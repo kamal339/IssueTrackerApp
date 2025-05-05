@@ -1,0 +1,26 @@
+@IssueTrackerApp.Server_HostAddress = http://localhost:5035
+
+GET {{IssueTrackerApp.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+### Get all issues
+GET {{IssueTrackerApp.Server_HostAddress}}/Issues/
+Accept: application/json
+
+
+### Delete a issue
+DELETE {{IssueTrackerApp.Server_HostAddress}}/Issues/
+Accept: application/json
+
+
+### Add a issue
+POST {{IssueTrackerApp.Server_HostAddress}}/Issues/
+Accept: application/json
+
+
+### Update a issue
+PUT {{IssueTrackerApp.Server_HostAddress}}/Issues/
+Accept: application/json
+
+###

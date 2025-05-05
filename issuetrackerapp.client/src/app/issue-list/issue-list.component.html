@@ -1,0 +1,46 @@
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-primary" (click)="openIssueForm()">Add new issue</button>
+    </div>
+  </div>
+  <div class="row pt-2">
+    <div class="col-sm-3">
+      Filter by title/description
+    </div>
+    <div class="col-sm-9">
+      <input type="text" [(ngModel)]="filterText" (input)="filterIssues()" placeholder="Search" class="form-control" />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-sm-12">
+      <h2> List of issues</h2>
+      <br />
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let issue of filteredIssues">
+            <td>{{ issue.title }}</td>
+            <td>{{ issue.description }}</td>
+            <td>{{ issue.status }}</td>
+            <td>{{ issue.priority }}</td>
+            <td>
+              <button (click)="editIssue(issue)"  class="btn btn-primary">Edit</button> &nbsp;
+              <button (click)="deleteIssue(issue.id)"  class="btn btn-primary">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
